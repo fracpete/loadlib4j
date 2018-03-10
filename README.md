@@ -1,13 +1,16 @@
 # loadlib4j
 Little helper class for testing the loading of native libraries in Java.
-It uses the `java.lang.System.loadLibrary(String)` call to load the library.
+
+It simply uses the `java.lang.System.loadLibrary(String)` call to load the 
+library.
+
 
 ## Usage
 
 ### Command-line
 
 The following command tries to load the `libmkl_rt.so` library on Linux,
-which has to be on `LD_LIBRARY_PATH` path: 
+which has to be on the path defined by `LD_LIBRARY_PATH`: 
 
 ```bash
 java -jar loadlib4j-0.0.1.jar libmkl_rt.so
@@ -26,6 +29,8 @@ and `lib` prefix. In the above example, the test succeeds with `mkl_rt`.
 
 ### Java
 
+The same example in Java:
+
 ```java
 import com.github.fracpete.loadlib4j.Main;
 import java.util.Map;
@@ -40,13 +45,21 @@ for (String lib: result.keySet()) {
 }
 ```
 
+In this case, the output will be something like this:
+
+```
+libmkl_rt.so -> false
+mkl_rt -> false
+libmkl_rt -> false
+```
+
 ## Maven
 
 Use the following dependency to include the library in your Maven project:
 ```xml
     <dependency>
       <groupId>com.github.fracpete</groupId>
-      <artifactId>loadlibs4j</artifactId>
+      <artifactId>loadlib4j</artifactId>
       <version>0.0.1</version>
     </dependency>
 ```
