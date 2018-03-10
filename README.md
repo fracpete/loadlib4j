@@ -53,6 +53,12 @@ mkl_rt -> false
 libmkl_rt -> false
 ```
 
+
+## Releases
+
+* [0.0.1](https://github.com/fracpete/loadlib4j/releases/download/v0.0.1/loadlib4j-0.0.1.jar)
+
+
 ## Maven
 
 Use the following dependency to include the library in your Maven project:
